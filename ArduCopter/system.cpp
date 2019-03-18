@@ -84,8 +84,6 @@ void Copter::init_ardupilot()
     // Init RSSI
     rssi.init();
     
-    barometer.init();
-
     // setup telem slots with serial ports
     gcs().setup_uarts(serial_manager);
 
@@ -191,23 +189,6 @@ void Copter::init_ardupilot()
 #ifdef USERHOOK_INIT
     USERHOOK_INIT
 #endif
-
-#if HIL_MODE != HIL_MODE_DISABLED
-    while (barometer.get_last_update() == 0) {
-        // the barometer begins updating when we get the first
-        // HIL_STATE message
-        gcs().send_text(MAV_SEVERITY_WARNING, "Waiting for first HIL_STATE message");
-        delay(1000);
-    }
-
-    // set INS to HIL mode
-    ins.set_hil_mode();
-#endif
-
-    // read Baro pressure at ground
-    //-----------------------------
-    barometer.set_log_baro_bit(MASK_LOG_IMU);
-    barometer.calibrate();
 
     // initialise rangefinder
     init_rangefinder();

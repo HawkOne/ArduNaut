@@ -119,7 +119,6 @@ const AP_Scheduler::Task Copter::scheduler_tasks[] = {
 #endif
     SCHED_TASK(three_hz_loop,          3,     75),
     SCHED_TASK_CLASS(AP_ServoRelayEvents,  &copter.ServoRelayEvents,      update_events, 50,     75),
-    SCHED_TASK_CLASS(AP_Baro,              &copter.barometer,           accumulate,      50,  90),
 #if PRECISION_LANDING == ENABLED
     SCHED_TASK(update_precland,      400,     50),
 #endif
@@ -563,11 +562,9 @@ void Copter::read_AHRS(void)
     ahrs.update(true);
 }
 
-// read baro and log control tuning
+// read  and log control tuning
 void Copter::update_altitude()
 {
-    // read in baro altitude
-    read_barometer();
 
     // write altitude info to dataflash logs
     if (should_log(MASK_LOG_CTUN)) {

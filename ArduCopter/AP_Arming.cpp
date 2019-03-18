@@ -60,29 +60,6 @@ bool AP_Arming_Copter::pre_arm_checks(bool display_failure)
         AP_Arming::pre_arm_checks(display_failure);
 }
 
-bool AP_Arming_Copter::barometer_checks(bool display_failure)
-{
-    if (!AP_Arming::barometer_checks(display_failure)) {
-        return false;
-    }
-
-    bool ret = true;
-    // check Baro
-    if ((checks_to_perform == ARMING_CHECK_ALL) || (checks_to_perform & ARMING_CHECK_BARO)) {
-        // Check baro & inav alt are within 1m if EKF is operating in an absolute position mode.
-        // Do not check if intending to operate in a ground relative height mode as EKF will output a ground relative height
-        // that may differ from the baro height due to baro drift.
-        nav_filter_status filt_status = copter.inertial_nav.get_filter_status();
-        bool using_baro_ref = (!filt_status.flags.pred_horiz_pos_rel && filt_status.flags.pred_horiz_pos_abs);
-        if (using_baro_ref) {
-            if (fabsf(copter.inertial_nav.get_altitude() - copter.baro_alt) > PREARM_MAX_ALT_DISPARITY_CM) {
-                check_failed(ARMING_CHECK_BARO, display_failure, "Altitude disparity");
-                ret = false;
-            }
-        }
-    }
-    return ret;
-}
 
 bool AP_Arming_Copter::compass_checks(bool display_failure)
 {

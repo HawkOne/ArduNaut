@@ -276,12 +276,7 @@ void Copter::Log_Write_Parameter_Tuning(uint8_t param, float tuning_val, int16_t
 // logs when baro or compass becomes unhealthy
 void Copter::Log_Sensor_Health()
 {
-    // check baro
-    if (sensor_health.baro != barometer.healthy()) {
-        sensor_health.baro = barometer.healthy();
-        Log_Write_Error(ERROR_SUBSYSTEM_BARO, (sensor_health.baro ? ERROR_CODE_ERROR_RESOLVED : ERROR_CODE_UNHEALTHY));
-    }
-
+    
     // check compass
     if (sensor_health.compass != compass.healthy()) {
         sensor_health.compass = compass.healthy();

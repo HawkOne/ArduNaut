@@ -1,14 +1,5 @@
 #include "Copter.h"
 
-// return barometric altitude in centimeters
-void Copter::read_barometer(void)
-{
-    barometer.update();
-
-    baro_alt = barometer.get_altitude() * 100.0f;
-
-    motors->set_air_density_ratio(barometer.get_air_density_ratio());
-}
 
 void Copter::init_rangefinder(void)
 {
@@ -299,9 +290,7 @@ void Copter::update_sensor_status_flags(void)
     // default to all healthy
     control_sensors_health = control_sensors_present;
 
-    if (!barometer.all_healthy()) {
-        control_sensors_health &= ~MAV_SYS_STATUS_SENSOR_ABSOLUTE_PRESSURE;
-    }
+   
     if (!g.compass_enabled || !compass.healthy() || !ahrs.use_compass()) {
         control_sensors_health &= ~MAV_SYS_STATUS_SENSOR_3D_MAG;
     }

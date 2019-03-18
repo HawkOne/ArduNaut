@@ -137,8 +137,6 @@ void Copter::thrust_loss_check()
 void Copter::parachute_check()
 {
     static uint16_t control_loss_count;	// number of iterations we have been out of control
-    static int32_t baro_alt_start;
-
     // exit immediately if parachute is not enabled
     if (!parachute.enabled()) {
         return;
@@ -184,19 +182,7 @@ void Copter::parachute_check()
         control_loss_count++;
     }
 
-    // record baro alt if we have just started losing control
-    if (control_loss_count == 1) {
-        baro_alt_start = baro_alt;
-
-    // exit if baro altitude change indicates we are not falling
-    } else if (baro_alt >= baro_alt_start) {
-        control_loss_count = 0;
-        return;
-
-    // To-Do: add check that the vehicle is actually falling
-
-    // check if loss of control for at least 1 second
-    } else if (control_loss_count >= (PARACHUTE_CHECK_TRIGGER_SEC*scheduler.get_loop_rate_hz())) {
+    if (control_loss_count >= (PARACHUTE_CHECK_TRIGGER_SEC*scheduler.get_loop_rate_hz())) {
         // reset control loss counter
         control_loss_count = 0;
         // log an error in the dataflash

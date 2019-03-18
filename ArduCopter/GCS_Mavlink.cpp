@@ -1212,9 +1212,6 @@ void GCS_MAVLINK_Copter::handleMessage(mavlink_message_t* msg)
 
         ins.set_accel(0, accels);
 
-        AP::baro().setHIL(packet.alt*0.001f);
-        copter.compass.setHIL(0, packet.roll, packet.pitch, packet.yaw);
-        copter.compass.setHIL(1, packet.roll, packet.pitch, packet.yaw);
 
         break;
     }
