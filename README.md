@@ -11,7 +11,9 @@ Started 03/2019 by Stefano Ampolo - HawkOne
 
 ## Developer Information ##
 
-- [HawkOne](https://github.com/HawkOne) -
+- [HawkOne](https://github.com/HawkOne) - Master Student of Electronics Engineering in Politecnico di Milano
+- [Roberto Navoni]
+' [Luca Micheletti]
 
 
 
