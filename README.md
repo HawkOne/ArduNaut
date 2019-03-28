@@ -11,9 +11,9 @@ Started 03/2019 by Stefano Ampolo - HawkOne
 
 ## Developer Information ##
 
-- Stefano Ampolo ' [HawkOne](https://github.com/HawkOne) - Master Student of Electronics Engineering in Politecnico di Milano
-- Roberto Navoni [VirtualRobotix](https://github.com/virtualrobotix) - CEO of LaserNavigation 
-- Luca Micheletti [Luca Micheletti](https://github.com/LukeMike) - IT Engineer 
+- Stefano Ampolo - [HawkOne](https://github.com/HawkOne) - Master Student of Electronics Engineering in Politecnico di Milano
+- Roberto Navoni - [VirtualRobotix](https://github.com/virtualrobotix) - CEO of LaserNavigation 
+- Luca Micheletti -  [Luca Micheletti](https://github.com/LukeMike) - IT Engineer 
 
 
 
