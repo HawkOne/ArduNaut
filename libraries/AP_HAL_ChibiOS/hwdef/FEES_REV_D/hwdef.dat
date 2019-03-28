@@ -72,7 +72,7 @@
 #Queste definizioni sono all'interno di ardupilot/libraries/AP_HAL/board/AP_HAL_Boards.h
 
 define HAL_BOARD_SUBTYPE_CHIBIOS_FEES_REV_D 	5021
-define CONFIG_HAL_BOARD_SUBTYPE HAL_BOARD_SUBTYPE_CHIBIOS_FEES_REV_D
+define CONFIG_HAL_BOARD_SUBTYPE HAL_BOARD_SUBTYPE_CHIBIO_FEES_REV_D
 
 
 # MCU class and specific type

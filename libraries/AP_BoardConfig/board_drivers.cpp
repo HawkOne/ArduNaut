@@ -271,7 +271,11 @@ void AP_BoardConfig::board_autodetect(void)
     hal.console->printf("Detected VR Core 1.0\n");
 #elif defined(CONFIG_ARCH_BOARD_VRBRAIN_V54) || defined(HAL_CHIBIOS_ARCH_BRAINV54)
     state.board_type.set_and_notify(VRX_BOARD_BRAIN54);
-    hal.console->printf("Detected VR Brain 5.4\n");
+    hal.console->printf("Detected VR Brain 5.4\n");   
+#elif defined(CONFIG_ARCH_BOARD_FEES_REV_D) || defined(HAL_BOARD_FEES)
+    state.board_type.set_and_notify(FEES_REV_D);
+    hal.console->printf("Detected FEES MainBoard Rev.D \n");
+    
 #endif
 
 }
