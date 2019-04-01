@@ -240,7 +240,7 @@ define HAL_STORAGE_SIZE   16384
 #define HAL_WITH_RAMTRON 1
 
 # enable FAT filesystem
-define HAL_OS_FATFS_IO 1
+define HAL_OS_FATFS_IO 0
 
 define HAL_GPIO_LED_ON  0
 define HAL_GPIO_LED_OFF 1
