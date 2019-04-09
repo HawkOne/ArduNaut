@@ -825,8 +825,8 @@ AP_InertialSensor::detect_backends(void)
     case AP_BoardConfig::VRX_BOARD_CORE10:
     case AP_BoardConfig::VRX_BOARD_UBRAIN51:
     case AP_BoardConfig::VRX_BOARD_UBRAIN52:
-        ADD_BACKEND(AP_InertialSensor_Invensense::probe(*this, hal.spi->get_device(HAL_INS_MPU9250_NAME), ROTATION_YAW_90));
-        ADD_BACKEND(AP_InertialSensor_Invensense::probe(*this, hal.spi->get_device(HAL_INS_MPU9250_1_NAME), ROTATION_YAW_90));
+        ADD_BACKEND(AP_InertialSensor_Invensense::probe(*this, hal.spi->get_device(HAL_INS_MPU9250_NAME), ROTATION_ROLL_180));
+        ADD_BACKEND(AP_InertialSensor_Invensense::probe(*this, hal.spi->get_device(HAL_INS_MPU9250_1_NAME), ROTATION_NONE));
         break;
         
     case AP_BoardConfig::PX4_BOARD_PCNC1:

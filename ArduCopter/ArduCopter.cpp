@@ -74,6 +74,10 @@
 
 #include "Copter.h"
 
+#include "AN_Watchdog/WatchDog.h"
+bool statoWD=FALSE;
+
+
 #define SCHED_TASK(func, rate_hz, max_time_micros) SCHED_TASK_CLASS(Copter, &copter, func, rate_hz, max_time_micros)
 
 /*
@@ -196,9 +200,12 @@ const AP_Scheduler::Task Copter::scheduler_tasks[] = {
 };
 
 constexpr int8_t Copter::_failsafe_priorities[7];
+    
+    //WatchDog HardwareWatchDog(0,0);
 
 void Copter::setup()
-{
+{	
+
     // Load the default values of variables listed in var_info[]s
     AP_Param::setup_sketch_defaults();
 
@@ -328,7 +335,7 @@ void Copter::fourhundred_hz_logging()
 // ten_hz_logging_loop
 // should be run at 10hz
 void Copter::ten_hz_logging_loop()
-{
+{		
     // log attitude data if we're not already logging at the higher rate
     if (should_log(MASK_LOG_ATTITUDE_MED) && !should_log(MASK_LOG_ATTITUDE_FAST)) {
         Log_Write_Attitude();
@@ -413,6 +420,23 @@ void Copter::three_hz_loop()
 // one_hz_loop - runs at 1Hz
 void Copter::one_hz_loop()
 {
+ 
+	//HardwareWatchDog.toggle();  // This toggles the Hardware Watchdog
+if(statoWD==TRUE){
+    hal.gpio->write(WatchDogPin, 0 );
+    hal.gpio->write(5, 0 );
+
+    statoWD=FALSE;
+  }
+  else{
+    hal.gpio->write(WatchDogPin, 1 );
+    hal.gpio->write(5, 1 );
+
+    statoWD=TRUE;
+}
+/////////////////////////////////////////
+
+
     if (should_log(MASK_LOG_ANY)) {
         Log_Write_Data(DATA_AP_STATE, ap.value);
     }
