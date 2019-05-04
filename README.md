@@ -28,6 +28,11 @@ Started 03/2019 by Stefano Ampolo - HawkOne
 - [LaserNavigation -FEES 2-](http://www.lasernavigation.it/the-cubesat-fees-flexible-experimental-embedded-satelliteproject-update/?fbclid=IwAR2hVOQHhSntt7xCy0riLFaJfNiO0qPWZ2-e720y4O6QpOrd8JbF9I-oV1c)
 
 
+## Videos - Youtube ##
+
+Animation Playlist -->  https://www.youtube.com/playlist?list=PLAcXxD3oaYMkx2P-InvXOcBugmhs731zN
+Prototyping Playlist --> https://www.youtube.com/playlist?list=PLAcXxD3oaYMn9i9n3JrIgxVPjI7P949sD
+
 
 ## User Support & Discussion Forums ##
 
