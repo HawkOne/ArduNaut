@@ -30,8 +30,9 @@ Started 03/2019 by Stefano Ampolo - HawkOne
 
 ## Videos - Youtube ##
 
-Animation Playlist -->  https://www.youtube.com/playlist?list=PLAcXxD3oaYMkx2P-InvXOcBugmhs731zN
-Prototyping Playlist --> https://www.youtube.com/playlist?list=PLAcXxD3oaYMn9i9n3JrIgxVPjI7P949sD
+Animation Playlist -->  https://www.youtube.com/playlist?list=PLAcXxD3oaYMkx2P-InvXOcBugmhs731zN     
+   
+Prototyping Playlist --> https://www.youtube.com/playlist?list=PLAcXxD3oaYMn9i9n3JrIgxVPjI7P949sD     
 
 
 ## User Support & Discussion Forums ##
