@@ -1,4 +1,4 @@
-To create a FEES-enviroement on Ubuntu-Linux you need to do these commands.
+To create a FEES-Environment on Ubuntu-Linux you need to do these commands.
 
 
 sudo apt-get update
@@ -22,7 +22,7 @@ pip install future # https://pypi.python.org/pypi/future or http://python-future
 #LOG OUT AND LOG BACK IN
 
 
-### Now the Enviroement is set!  ###
+### Now the Environment is set!  ###
 
 
 # To build: 
